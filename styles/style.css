@@ -2,4 +2,402 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--text-family), sans-serif;
+  font-size: var(--text-size);
+  background-image: var(--bg-image);
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.decorated-title {
+  position: absolute;
+  color: var(--decoreted-color);
+  top: 10px;
+  right: 37px;
+  font-family: var(--text-family), sans-serif;
+}
+
+.decorated-title::after {
+  content: "";
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  background-color: var(--decoreted-color);
+  position: absolute;
+  margin-block-start: 7px;
+  margin-inline-start: 9px;
+  box-shadow: 0px 0px 7px 2px;
+}
+
+.header {
+  position: relative;
+  min-width: 375px;
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 0 10px;
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-top: 1px solid var(--zone-color);
+  border-right: 1px solid var(--zone-color);
+  right: 10px;
+  top: 10px;
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-bottom: 1px solid var(--zone-color);
+  border-left: 1px solid var(--zone-color);
+  left: 10px;
+  bottom: 10px;
+}
+
+.button_event:disabled {
+  pointer-events: none;
+}
+
+.header__theme-menu-button_active:disabled {
+  border: 1px solid var(--color-disable);
+  padding: 0 10px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: solid var(--color-button) 0.5px;
+  text-underline-offset: 6px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-color);
+  padding: 0 10px;
+}
+
+.header__theme-menu-button:active {
+  text-decoration: none;
+}
+
+.header__theme-menu {
+  font-size: var(--text-size);
+  color: var(--color-button);
+  font-family: var(--text-family), sans-serif;
+  justify-self: end;
+  align-self: center;
+  margin-block-start: 7px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--tittle-color);
+  font-family: var(--text-family), sans-serif;
+  line-height: 95px;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title__container {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-end: 10px;
+}
+
+.title__container_text {
+  font-family: var(--text-font), sans-serif;
+  background-color: var(--accent-color);
+  font-size: var(--text-size);
+  color: var(--subtitle-color);
+  font-weight: 700;
+  line-height: 23px;
+  width: clamp(355px, 47vw, 491px);
+  margin: auto 0;
+  height: fit-content;
+}
+
+/* медиа запросы */
+
+@media (width >= 768px) {
+  .decorated-title {
+    top: 22px;
+    right: 50px;
+  }
+}
+
+@media (width >= 768px) {
+  .decorated-title::after {
+    margin-inline-start: 11px;
+  }
+}
+
+@media (width >= 768px) {
+  .header {
+    min-height: 1024px;
+    grid-template-rows: 0.7fr 1fr 0.7fr;
+    padding: 0;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+    grid-template-rows: 1fr min-content 1fr;
+  }
+}
+
+@media (width >= 768px) {
+  .decorated-zone::before {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .header__theme-menu {
+    align-self: end;
+    margin-block-end: 1.3vi;
+    margin-inline-end: 2.4vi;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+    margin-block-start: 1.8vi;
+    margin-inline-start: 2.8vi;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+  }
+}
+
+@media (width >= 768px) {
+  .title {
+    align-self: center;
+    justify-self: flex-start;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-block-start: 9px;
+  }
+}
+
+@media (width >= 1024px) {
+  .title {
+    margin-block-start: 0px;
+  }
+}
+
+@media (width >= 768px) {
+  .title__container {
+    min-width: 364px;
+    align-self: self-start;
+    margin-inline-end: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .title__container {
+    align-self: center;
+    margin-block-end: 5px;
+    margin-inline-start: 50px;
+  }
+}
+
+@media (width >= 1024px) {
+  .title__container_text {
+    min-width: 491px;
+  }
+}
+
+/* блок основного контента */
+
+.content {
+  font-family: var(--text-family), sans-serif;
+  font-size: var(--text-size);
+  padding: 0 10px;
+  margin-block-start: 40px;
+}
+
+.content__item_concentration {
+  display: grid;
+  gap: 20px;
+}
+
+.content__subtitle {
+  font-family: var(--text-family), sans-serif;
+  font-size: var(--text-size);
+  color: var(--alternative-color);
+}
+
+.content__container {
+  display: grid;
+  gap: 20px;
+}
+
+.content__item_zone {
+  display: grid;
+  gap: 10px;
+}
+
+.content__item_heading {
+  color: var(--subtitle-color);
+  background-color: var(--accent-color);
+  font-family: var(--text-family), sans-serif;
+  font-size: var(--text-size);
+}
+
+.content__item_text {
+  font-family: var(--text-font), sans-serif;
+  color: var(--text-color);
+  font-size: var(--text-size);
+  line-height: 23.4px;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 3px 2px 1px var(--accent-color);
+  line-height: inherit;
+}
+
+.text__link:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+/*не работает */
+.text__link:hover {
+  border-bottom: solid var(--text-color) 0.5px;
+}
+
+.content_item_attention {
+  margin-block-start: 50px;
+  display: grid;
+  gap: 20px;
+}
+
+/* проверить */
+
+.container__reasons {
+  display: grid;
+  gap: 20px;
+}
+
+.content__item_reasons {
+  color: var(--subtitle-color);
+  background-color: var(--accent-color);
+  font-family: var(--text-family), sans-serif;
+  font-size: var(--text-size);
+}
+
+.content_item_question {
+  margin-block-start: 52px;
+  display: grid;
+  gap: 22px;
+}
+
+.content__item_heading-no_bold {
+  color: var(--subtitle-color);
+  background-color: var(--accent-color);
+  font-size: var(--text-family);
+  font-weight: 400;
+}
+
+/*медиа запросы к основному контенту */
+
+@media (width >= 768px) {
+  .content {
+    padding: 0 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .content__item_concentration {
+    margin-block-start: 62px;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .content__item_concentration {
+    margin-block-start: 58px;
+    gap: 10px;
+  }
+}
+
+@media (width >= 768px) {
+  .content_item_attention {
+    margin-block-start: 80px;
+  }
+}
+
+@media (width >= 1024px) {
+  .content_item_attention {
+    margin-block-start: 82px;
+  }
+}
+
+@media (width >= 1024px) {
+  .container__reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .content__item_reasons {
+    text-align: left;
+  }
+}
+
+@media (width >= 768px) {
+  .content_item_question {
+    grid-template-columns: 1fr 2fr;
+    margin-block-start: 83px;
+  }
+}
+
+@media (width >= 1024px) {
+  .content_item_question {
+    gap: 10px;
+  }
 }
