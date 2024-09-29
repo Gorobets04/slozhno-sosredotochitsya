@@ -117,7 +117,7 @@
 
 .title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: var(--tittle-color);
+  color: var(--title-color);
   font-family: var(--text-family), sans-serif;
   line-height: 95px;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -491,7 +491,7 @@
 
 .footer__title {
   font-size: var(--title-size-mobile);
-  color: var(--tittle-color);
+  color: var(--title-color);
   font-family: var(--text-font), sans-serif;
   text-shadow: 1px 2px 1px var(--accent-color);
 }
