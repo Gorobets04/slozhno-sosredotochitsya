@@ -4,8 +4,8 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: var(--text-family), sans-serif;
   font-size: var(--text-size);
+  background-color: var(--bg-color);
   background-image: var(--bg-image);
-  background-color: black;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -297,13 +297,12 @@
   line-height: inherit;
 }
 
-.text__link:focus-visible {
+.text-link:focus-visible {
   outline: none;
   border: 1px solid var(--text-color);
 }
 
-/*не работает */
-.text__link:hover {
+.text-link:hover {
   border-bottom: solid var(--text-color) 0.5px;
 }
 

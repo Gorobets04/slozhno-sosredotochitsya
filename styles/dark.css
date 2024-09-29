@@ -19,6 +19,7 @@
   --text-color: #f1b2ce;
   --zone-color: #ff0070;
   --subtitle-color: #000028;
+  --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --decoreted-color: rgba(255, 0, 112, 1);
 }
